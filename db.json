@@ -1,14 +1,40 @@
 {
+  "users": [
+    {
+      "id": "5c45",
+      "nombre": "manolo",
+      "correo": "1@gmail.com",
+      "contrasena": "1234",
+      "telefono": "123456",
+      "rol": "ciudadano"
+    },
+    {
+      "id": "5ead",
+      "nombre": "manolo",
+      "correo": "1@gmail.com",
+      "contrasena": "1234567",
+      "telefono": "123456",
+      "rol": "ciudadano"
+    },
+    {
+      "id": "88f4",
+      "nombre": "maria",
+      "correo": "4@gmail.com",
+      "contrasena": "35edrfgvbhkljihg yfaydbuisuid,f",
+      "telefono": "12345678909876543",
+      "rol": "ciudadano"
+    }
+  ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
       "author": "typicode"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
       "postId": 1
     }
