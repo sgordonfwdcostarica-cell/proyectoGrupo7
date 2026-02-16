@@ -1,8 +1,14 @@
+import { getUsuarios } from "../services/fetch.js"
+
 const correo = document.getElementById("correo")
-const contraseña = document.getElementById("contraseña")
+const contraseña = document.getElementById("contrasena")
 const btnSesion = document.getElementById("btnSesion")
 
-btnSesion.addEventListener("click", function () {
+btnSesion.addEventListener("click", async function (e) {
+    e.preventDefault()
+    const usuarios = await getUsuarios()
+
+
 
     const valorCorreo = correo.value
     const valorContraseña = contraseña.value
@@ -13,13 +19,14 @@ btnSesion.addEventListener("click", function () {
         return
     }
 
-    // Ejemplo de validación simple
-    if (valorCorreo === "admin@gmail.com" && valorContraseña === "1234") {
-        alert("Inicio de sesión exitoso")
-        // aquí puedes redirigir
-        // window.location.href = "home.html"
-    } else {
-        alert("Correo o contraseña incorrectos")
+    const usuarioValido = usuarios.find((usuario)=> usuario.correo === valorCorreo && usuario.contrasena === valorContraseña)
+
+
+    if (usuarioValido) {
+        alert("inicia sesion")
+    }else{
+        alert("NO inicia sesion")
     }
+
 
 })
