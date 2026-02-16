@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrador - Escazú</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="menu-lateral">
+            <h2>Menú Administrativo</h2>
+            <button class="menu-btn" data-modulo="reportes">-modulo="reportes">Gestión de Reportes</button>
+            <button class="menu-btn" data-modulo="proyectos">Gestión de Proyectos Viales</button>
+            <button class="menu-btn" data-modulo="servicios">Gestión de Servicios Públicos</button>
+            <a href="index.html" class="btn-cerrar">Cerrar Sesión</a>
+        </aside>
+
+        <main class="contenido-modulo">
+            <!-- Sección de Reportes -->
+            <section id="modulo-reportes" class="modulo">
+                <h2>Gestión de Reportes</h2>
+                <button id="btn-nuevo-reporte" class="btn">Nuevo Reporte (Prueba)</button>
+                <div id="form-reporte" class="form-modulo" style="display: none;">
+                    <h3>Crear/Editar Reporte</h3>
+                    <form id="form-gestion-reportes">
+                        <input type="hidden" id="reporte-id">
+                        <div class="form-group">
+                            <label for="reporte-tipo">Tipo de Reporte *</label>
+                            <select id="reporte-tipo" required>
+                                <option value="Bache">Bache</option>
+                                <option value="Señalización">Señalización</option>
+                                <option value="Alcantarillado">Alcantarillado</option>
+                                <option value="Residuos">Recolección de Residuos</option>
+                                <option value="Alumbrado">Alumbrado Público</option>
+                                <option value="Zonas Verdes">Zonas Verdes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reporte-descripcion">Descripción *</label>
+                            <textarea id="reporte-descripcion" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reporte-ubicacion">Ubicación *</label>
+                            <input type="text" id="reporte-ubicacion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reporte-estado">Estado *</label>
+                            <select id="reporte-estado" required>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En Proceso">En Proceso</option>
+                                <option value="Resuelto">Resuelto</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="button" id="btn-cancelar-reporte" class="btn btn-secundario">Cancelar</button>
+                    </form>
+                </div>
+                <table class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                            <th>Ubicación</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-reportes"></tbody>
+                </table>
+            </section>
+
+            <!-- Sección de Proyectos Viales -->
+            <section id="modulo-proyectos" class="modulo" style="display: none;">
+                <h2>Gestión de Proyectos Viales</h2>
+                <button id="btn-nuevo-proyecto" class="btn">Nuevo Proyecto</button>
+                <div id="form-proyecto" class="form-modulo" style="display: none;">
+                    <h3>Crear/Editar Proyecto</h3>
+                    <form id="form-gestion-proyectos">
+                        <input type="hidden" id="proyecto-id">
+                        <div class="form-group">
+                            <label for="proyecto-nombre">Nombre *</label>
+                            <input type="text" id="proyecto-nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="proyecto-descripcion">Descripción *</label>
+                            <textarea id="proyecto-descripcion" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="proyecto-presupuesto">Presupuesto (₡) *</label>
+                            <input type="number" id="proyecto-presupuesto" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="proyecto-fecha">Fecha de Inicio *</label>
+                            <input type="date" id="proyecto-fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="proyecto-estado">Estado *</label>
+                            <select id="proyecto-estado" required>
+                                <option value="Planificado">Planificado</option>
+                                <option value="En Ejecución">En Ejecución</option>
+                                <option value="Concluido">Concluido</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="button" id="btn-cancelar-proyecto" class="btn btn-secundario">Cancelar</button>
+                    </form>
+                </div>
+                <table class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Presupuesto</th>
+                            <th>Fecha Inicio</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-proyectos"></tbody>
+                </table>
+            </section>
+
+            <!-- Sección de Servicios Públicos -->
+            <section id="modulo-servicios" class="modulo" style="display: none;">
+                <h2>Gestión de Servicios Públicos</h2>
+                <button id="btn-nuevo-servicio" class="btn">Nuevo Servicio</button>
+                <div id="form-servicio" class="form-modulo" style="display: none;">
+                    <h3>Crear/Editar Servicio</h3>
+                    <form id="form-gestion-servicios">
+                        <input type="hidden" id="servicio-id">
+                        <div class="form-group">
+                            <label for="servicio-tipo">Tipo de Servicio *</label>
+                            <select id="servicio-tipo" required>
+                                <option value="Recolección de Residuos">Recolección de Residuos</option>
+                                <option value="Alumbrado Público">Alumbrado Público</option>
+                                <option value="Mantenimiento de Zonas Verdes">Mantenimiento de Zonas Verdes</option>
+                                <option value="Alcantarillado">Alcantarillado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio-descripcion">Descripción *</label>
+                            <textarea id="servicio-descripcion" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio-responsable">Responsable *</label>
+                            <input type="text" id="servicio-responsable" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio-estado">Estado *</label>
+                            <select id="servicio-estado" required>
+                                <option value="Activo">Activo</option>
+                                <option value="En Mantenimiento">En Mantenimiento</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="button" id="btn-cancelar-servicio" class="btn btn-secundario">Cancelar</button>
+                    </form>
+                </div>
+                <table class="tabla-datos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                            <th>Responsable</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-servicios"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

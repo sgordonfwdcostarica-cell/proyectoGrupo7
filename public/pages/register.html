@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Municipalidad de Escazú</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <h1>Registro de Ciudadano</h1>
+        <a href="index.html" class="btn-volver">Volver al Home</a>
+    </header>
+
+    <main class="form-container">
+        <form id="form-register">
+            <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña *</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Registrarse</button>
+            </div>
+            <p id="mensaje-respuesta"></p>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Municipalidad de Escazú</p>
+    </footer>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>
