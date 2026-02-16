@@ -1,15 +1,15 @@
 import { postData } from '../services/fetch.js';
 
-const formRegister = document.getElementById('form-register');
+const btnRegister = document.getElementById('btnRegister');
 const mensajeRespuesta = document.getElementById('mensaje-respuesta');
 
-formRegister.addEventListener('submit', async (e) => {
+btnRegister.addEventListener('click', async (e) => {
     e.preventDefault();
 
-    const nombre = document.getElementById('nombre').value.trim();
-    const correo = document.getElementById('correo').value.trim();
-    const contrasena = document.getElementById('contrasena').value.trim();
-    const telefono = document.getElementById('telefono').value.trim();
+    const nombre = document.getElementById('name').value.trim();
+    const correo = document.getElementById('email').value.trim();
+    const contrasena = document.getElementById('password').value.trim();
+    const telefono = document.getElementById('phone').value.trim();
 
     // Validación básica (aunque los campos tienen "required" en HTML)
     if (!nombre || !correo || !contrasena || !telefono) {
@@ -26,7 +26,7 @@ formRegister.addEventListener('submit', async (e) => {
     };
 
     try {
-        const resultado = await postData('/users', nuevoUsuario);
+        const resultado = await postData(nuevoUsuario);
         if (resultado) {
             mostrarMensaje('Registro exitoso. ¡Bienvenido!', 'success');
             formRegister.reset();

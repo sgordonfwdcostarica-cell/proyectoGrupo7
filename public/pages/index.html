@@ -3,41 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Municipalidad de Escazú - Gestión Vial y Servicios</title>
+    <title>Gobierno Digital - Municipalidad de Escazú</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Municipalidad de Escazú</h1>
-        <p>Gestión Vial y Servicios Públicos</p>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-landmark"></i> MUNI ESCAZÚ
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="/pages/login.html">Iniciar Sesión</a></li>
+            <li><a href="/pages/register.html" class="btn btn-primary" style="padding: 8px 15px;">Registrarse</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Gestión Vial y Servicios Públicos</h1>
+            <p>Trabajamos para brindarle un mejor servicio. Reporte incidencias, consulte sus proyectos y manténgase informado sobre las mejoras en nuestro cantón.</p>
+            <div class="hero-btns">
+                <a href="login.html" class="btn btn-primary">Hacer un Reporte</a>
+                <a href="#info" class="btn" style="color: white; border: 1px solid white; margin-left: 10px;">Más Información</a>
+            </div>
+        </div>
     </header>
 
-    <main class="home-container">
-        <section class="info-institucional">
-            <h2>Acerca del Servicio</h2>
-            <p>Plataforma para reportar problemas viales y gestionar servicios públicos del cantón de Escazú. Ayúdanos a mejorar nuestra ciudad!</p>
-        </section>
+    <main id="info" style="padding: 60px 5%; max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">¿Cómo funciona el sistema?</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="glass" style="padding: 30px; text-align: center;">
+                <i class="fas fa-user-plus" style="font-size: 3rem; color: var(--secondary-color); margin-bottom: 20px;"></i>
+                <h3>1. Regístrese</h3>
+                <p>Cree su cuenta ciudadana en pocos pasos para acceder a todas las funciones de reporte y seguimiento.</p>
+            </div>
+            
+            <div class="glass" style="padding: 30px; text-align: center;">
+                <i class="fas fa-bullhorn" style="font-size: 3rem; color: var(--secondary-color); margin-bottom: 20px;"></i>
+                <h3>2. Reporte</h3>
+                <p>Identifique baches, problemas de alumbrado, o fallas en servicios y descríbalos con precisión en nuestro portal.</p>
+            </div>
 
-        <section class="instrucciones">
-            <h2>Cómo reportar una incidencia</h2>
-            <ol>
-                <li>Regístrate en el sistema con tus datos.</li>
-                <li>Inicia sesión con tu correo y contraseña.</li>
-                <li>Completa el formulario de reporte con los detalles del problema.</li>
-                <li>La municipalidad dará seguimiento al caso.</li>
-            </ol>
-        </section>
+            <div class="glass" style="padding: 30px; text-align: center;">
+                <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--secondary-color); margin-bottom: 20px;"></i>
+                <h3>3. Seguimiento</h3>
+                <p>Nuestros administradores revisarán su caso y le darán seguimiento hasta que el problema sea resuelto.</p>
+            </div>
+        </div>
 
-        <section class="botones-acceso">
-            <a href="/pages/login.html" class="btn">Iniciar Sesión</a>
-            <a href="/pages/register.html" class="btn">Registrarse</a>
+        <section style="margin-top: 80px; text-align: center;">
+            <h2 style="margin-bottom: 30px;">Servicios Municipales Disponibles</h2>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <span style="background: #e2e8f0; padding: 10px 20px; border-radius: 50px; font-weight: 500;"><i class="fas fa-road"></i> Infraestructura Vial</span>
+                <span style="background: #e2e8f0; padding: 10px 20px; border-radius: 50px; font-weight: 500;"><i class="fas fa-trash"></i> Recolección de Residuos</span>
+                <span style="background: #e2e8f0; padding: 10px 20px; border-radius: 50px; font-weight: 500;"><i class="fas fa-lightbulb"></i> Alumbrado Público</span>
+                <span style="background: #e2e8f0; padding: 10px 20px; border-radius: 50px; font-weight: 500;"><i class="fas fa-leaf"></i> Zonas Verdes</span>
+            </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 Municipalidad de Escazú - Todos los derechos reservados</p>
+    <footer>
+        <p>&copy; 2026 Municipalidad de Escazú - Todos los derechos reservados.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Plataforma de Ciudadanía Digital</p>
     </footer>
 
-    <script src="js/home.js"></script>
+    <script src="../js/javita.js" type="module"></script>
 </body>
 </html>

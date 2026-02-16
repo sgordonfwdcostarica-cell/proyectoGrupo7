@@ -1,7 +1,7 @@
 import { getUsuarios } from "../services/fetch.js"
 
-const correo = document.getElementById("correo")
-const contraseña = document.getElementById("contrasena")
+const correo = document.getElementById("email")
+const contraseña = document.getElementById("password")
 const btnSesion = document.getElementById("btnSesion")
 
 btnSesion.addEventListener("click", async function (e) {

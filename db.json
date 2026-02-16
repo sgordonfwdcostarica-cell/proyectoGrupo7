@@ -23,6 +23,30 @@
       "contrasena": "35edrfgvbhkljihg yfaydbuisuid,f",
       "telefono": "12345678909876543",
       "rol": "ciudadano"
+    },
+    {
+      "id": "bfef",
+      "nombre": "stacy",
+      "correo": "ssalazarfwdcostarica@gmail.com",
+      "contrasena": "123456",
+      "telefono": "62211837",
+      "rol": "ciudadano"
+    },
+    {
+      "id": "b877",
+      "nombre": "Stacy Salazar",
+      "correo": "ssalazarfwdcostarica@gmail.com",
+      "contrasena": "00000000000000000000000000000000000000",
+      "telefono": "12345678",
+      "rol": "ciudadano"
+    },
+    {
+      "id": "a589",
+      "nombre": "Stacy Salazar",
+      "correo": "ssalazarfwdcostarica@gmail.com",
+      "contrasena": "000000000000000000000000000000000000000",
+      "telefono": "7269 4020",
+      "rol": "ciudadano"
     }
   ]
 }

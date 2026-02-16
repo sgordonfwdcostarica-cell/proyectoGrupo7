@@ -1,4 +1,4 @@
-async function postData(endpoint, data) {
+async function postData(data) {
     try {
         const response = await fetch(`http://localhost:3003/users`, {
             method: 'POST',
