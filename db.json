@@ -48,5 +48,31 @@
       "telefono": "7269 4020",
       "rol": "ciudadano"
     }
+  ],
+  "reportes": [
+    {
+      "id": "c0be",
+      "tipoReporte": "Recolecciónaaaa,,,,,,,",
+      "ubicacion": "por ahiaaallll",
+      "descripcion": "naasaaayyyy",
+      "usuario": "bfef"
+    },
+    {
+      "id": "45db",
+      "tipoReporte": "Recolección",
+      "ubicacion": "jm",
+      "descripcion": "llllll",
+      "usuario": "bfef"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": "a8fb",
+      "proyecto": "Avnza",
+      "descripcion": "JIJI",
+      "presupuesto": "1000",
+      "fechaInicio": "ya",
+      "estado": "caminando"
+    }
   ]
 }
