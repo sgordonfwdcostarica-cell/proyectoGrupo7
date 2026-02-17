@@ -1,0 +1,82 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilos de inputs */
+input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+/* Estilo del botón */
+#btnEnviarProyecto {
+    width: 100%;
+    padding: 14px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+#btnEnviarProyecto:hover {
+    background-color: #1976d2;
+}
+
+/* Estilo del contenedor de proyectos */
+#contenedorProyectos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo para cada tarjeta de proyecto (se recomienda agregarla en el HTML dinámicamente) */
+.proyecto-tarjeta {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.proyecto-tarjeta h3 {
+    color: #1a73e8;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.proyecto-tarjeta p {
+    color: #5f6368;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
