@@ -8,34 +8,53 @@ const description = document.getElementById("description");
 
 const submitButton = document.querySelector("#reportForm button[type='submit']");
 
+const reportModal = document.getElementById("reportModal");
+const openReportModalBtn = document.getElementById("openReportModal");
+const closeReportModalBtn = document.getElementById("closeReportModal");
 
+// ABRIR MODAL
+openReportModalBtn.addEventListener("click", () => {
+    reportModal.style.display = "flex";
+});
+
+// CERRAR MODAL CON X
+closeReportModalBtn.addEventListener("click", () => {
+    reportModal.style.display = "none";
+});
+
+// CERRAR MODAL SI SE HACE CLICK FUERA
+reportModal.addEventListener("click", (e) => {
+    if (e.target === reportModal) {
+        reportModal.style.display = "none";
+    }
+});
 
 async function subirReporte() {
     const objReporte = {
         tipoReporte: reportType.value,
         ubicacion: location.value,
         descripcion: description.value,
-        usuario: localStorage.getItem("usuario") ? JSON.parse(localStorage.getItem("usuario")).id : null
+        usuario: localStorage.getItem("usuario")
+            ? JSON.parse(localStorage.getItem("usuario")).id
+            : null
     }
+
     await postAllData(objReporte, "reportes")
 }
-
 
 reportForm.addEventListener("submit", async function (e) {
     e.preventDefault();
     await subirReporte()
     alert("Reporte enviado con éxito")
     reportForm.reset()
+    reportModal.style.display = "none";
+    mostrarReportes()
 })
-
 
 async function mostrarReportes() {
     const reportes = await getAllData("reportes")
     const contenedorReportes = document.getElementById("contenedorReportes");
     contenedorReportes.innerHTML = ""
-
-
-
 
     if (reportes.length === 0) {
         contenedorReportes.innerHTML = `
@@ -46,18 +65,25 @@ async function mostrarReportes() {
         `;
         return;
     }
-    reportes.filter(reporte => reporte.usuario === (localStorage.getItem("usuario") ? JSON.parse(localStorage.getItem("usuario")).id : null))
+
+    reportes
+        .filter(reporte => 
+            reporte.usuario === (
+                localStorage.getItem("usuario")
+                    ? JSON.parse(localStorage.getItem("usuario")).id
+                    : null
+            )
+        )
         .forEach(reporte => {
             const reporteHTML = `
-            <div class="glass" style="padding: 20px;">
-                <h3>${reporte.tipoReporte}</h3>
-                <p><strong>Ubicación:</strong> ${reporte.ubicacion}</p>
-                <p><strong>Descripción:</strong> ${reporte.descripcion}</p>
-            </div>
-        `;
+                <div class="glass" style="padding: 20px;">
+                    <h3>${reporte.tipoReporte}</h3>
+                    <p><strong>Ubicación:</strong> ${reporte.ubicacion}</p>
+                    <p><strong>Descripción:</strong> ${reporte.descripcion}</p>
+                </div>
+            `;
             contenedorReportes.innerHTML += reporteHTML;
         });
-
 }
 
-mostrarReportes()
+mostrarReportes();

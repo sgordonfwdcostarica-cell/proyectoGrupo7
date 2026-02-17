@@ -206,6 +206,27 @@ nav {
     }
 }
 
+/* Modal animation */
+#reportModal {
+    transition: opacity 0.3s ease;
+}
+
+#reportModal .glass {
+    animation: fadeInModal 0.3s ease;
+}
+
+@keyframes fadeInModal {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* Footer */
 footer {
     background: #1a202c;
