@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Municipalidad de Escazú</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 30px;">
+                <i class="fas fa-landmark"></i> ADMIN MUNI
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active" data-module="reports"><i class="fas fa-bullhorn"></i> Gestión de Reportes</a></li>
+                <li><a href="#" data-module="projects"><i class="fas fa-road"></i> Proyectos Viales</a></li>
+                <li><a href="#" data-module="services"><i class="fas fa-concierge-bell"></i> Servicios Públicos</a></li>
+            </ul>
+            <div style="margin-top: auto; padding-top: 50px;">
+                <a href="#" id="logoutBtn" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
+                <h1 id="moduleTitle">Gestión de Reportes</h1>
+                <button id="addNewBtn" class="btn btn-primary" style="display: none;"><i class="fas fa-plus"></i> Nuevo Registro</button>
+            </header>
+
+            <div id="contentTable" class="glass" style="padding: 20px;">
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- Universal Modal for CRUD -->
+    <div id="adminModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+        <div class="glass" style="width: 100%; max-width: 600px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="closeAdminModal" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h2 id="modalTitle" style="margin-bottom: 20px;">Editar Registro</h2>
+            <form id="adminForm">
+                <input type="hidden" id="recordId">
+                <div id="formFields"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/admin.js" type="module"></script>
+</body>
+</html>
