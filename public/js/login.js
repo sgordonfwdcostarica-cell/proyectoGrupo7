@@ -23,7 +23,8 @@ btnSesion.addEventListener("click", async function (e) {
 
 
     if (usuarioValido) {
-        alert("inicia sesion")
+        window.location.href = "/pages/dashboard.html"
+        localStorage.setItem("usuario", JSON.stringify(usuarioValido)) // Guarda el usuario que inicia sesion
     }else{
         alert("NO inicia sesion")
     }
