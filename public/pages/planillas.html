@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Planillas Municipales</title>
+    <link rel="stylesheet" href="../css/planillas.css">
+    <!-- Íconos opcionales (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1><i class="fas fa-file-invoice-dollar"></i> Gestión de Planillas Salariales</h1>
+            <button class="btn btn-primary" id="btn-nueva-planilla">
+                <i class="fas fa-plus"></i> Nueva Planilla
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sección de Formulario (Modal) -->
+        <div class="modal" id="modal-planilla">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2 class="card-title" id="modal-title">Registrar Planilla</h2>
+                <form id="form-planilla">
+                    <input type="hidden" id="planilla-id">
+
+                    <div class="form-group">
+                        <label for="id-empleado" class="form-label">ID Empleado</label>
+                        <input type="text" id="id-empleado" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre-empleado" class="form-label">Nombre del Empleado</label>
+                        <input type="text" id="nombre-empleado" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="puesto" class="form-label">Puesto</label>
+                        <input type="text" id="puesto" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departamento" class="form-label">Departamento</label>
+                        <input type="text" id="departamento" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salario-base" class="form-label">Salario Base (₡)</label>
+                        <input type="number" id="salario-base" class="form-control" step="0.01" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horas-extra" class="form-label">Horas Extra</label>
+                        <input type="number" id="horas-extra" class="form-control" step="0.01" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valor-hora-extra" class="form-label">Valor por Hora Extra (₡)</label>
+                        <input type="number" id="valor-hora-extra" class="form-control" step="0.01" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rebajos" class="form-label">Rebajos (₡)</label>
+                        <input type="number" id="rebajos" class="form-control" step="0.01" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-pago" class="form-label">Fecha de Pago</label>
+                        <input type="date" id="fecha-pago" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salario-neto" class="form-label">Salario Neto (₡)</label>
+                        <input type="number" id="salario-neto" class="form-control" readonly>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                        <button type="button" class="btn btn-danger modal-close">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sección de Listado de Planillas -->
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-list-alt"></i> Planillas Registradas</h2>
+            <div id="alert-container"></div>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID Planilla</th>
+                            <th>Empleado</th>
+                            <th>Departamento</th>
+                            <th>Salario Base</th>
+                            <th>Salario Neto</th>
+                            <th>Fecha de Pago</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-planillas">
+                        <!-- Las filas se cargarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
