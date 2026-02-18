@@ -47,6 +47,22 @@
       "contrasena": "000000000000000000000000000000000000000",
       "telefono": "7269 4020",
       "rol": "ciudadano"
+    },
+    {
+      "id": "09e9",
+      "nombre": "papaya con alejandro",
+      "correo": "alejandrolimon2@gmail.com",
+      "contrasena": "123456789",
+      "telefono": "123445678",
+      "rol": "ciudadano"
+    },
+    {
+      "id": "e08b",
+      "nombre": "jheycob porras",
+      "correo": "jporrasfwdcostarica@gmail.com",
+      "contrasena": "123456789",
+      "telefono": "12121231",
+      "rol": "ciudadano"
     }
   ],
   "reportes": [
@@ -63,6 +79,13 @@
       "ubicacion": "jm",
       "descripcion": "llllll",
       "usuario": "bfef"
+    },
+    {
+      "id": "3b27",
+      "tipoReporte": "Bache",
+      "ubicacion": "por ahi",
+      "descripcion": ",,,,,",
+      "usuario": "a589"
     }
   ],
   "proyectos": [

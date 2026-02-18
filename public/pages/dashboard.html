@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <nav>
         <div class="logo">
             <i class="fas fa-landmark"></i> MUNI ESCAZÚ
@@ -19,18 +20,19 @@
     </nav>
 
     <main style="padding: 40px 5%; max-width: 1000px; margin: 0 auto;">
+
         <header style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
             <div>
                 <h1>Mis Reportes</h1>
                 <p>Gestione sus solicitudes y reportes ciudadanos.</p>
             </div>
-            <button id="openReportModal" class="btn btn-primary"><i class="fas fa-plus"></i> Nuevo Reporte</button>
+            <button id="openReportModal" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Nuevo Reporte
+            </button>
         </header>
 
         <section id="reportsList" style="display: grid; gap: 20px;">
-            <!-- Reports will be rendered here -->
-            <div class="glass" style="padding: 40px; text-align: center; color: #666;" id="contenedorReportes">
-            </div>
+            <div id="contenedorReportes"></div>
         </section>
 
         <header style="margin-top: 60px; margin-bottom: 30px;">
@@ -39,18 +41,44 @@
         </header>
 
         <section id="projectsList" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <!-- Projects will be rendered here -->
             <div class="glass" style="padding: 40px; text-align: center; color: #666; grid-column: 1 / -1;">
                 <i class="fas fa-road" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;"></i>
                 <p>Cargando proyectos viales...</p>
             </div>
         </section>
+
     </main>
 
-    <!-- Modal for New Report -->
+    <!-- MODAL -->
+    <div id="reportModal" style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    ">
         <div class="glass" style="width: 100%; max-width: 500px; padding: 30px; position: relative;">
-            <h2 style="margin-bottom: 20px;"><i class="fas fa-plus-circle"></i> Nuevo Reporte</h2>
+
+            <button id="closeReportModal" style="
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: none;
+                border: none;
+                font-size: 1.2rem;
+                cursor: pointer;
+            ">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h2 style="margin-bottom: 20px;">
+                <i class="fas fa-plus-circle"></i> Nuevo Reporte
+            </h2>
+
             <form id="reportForm">
+
                 <div class="form-group">
                     <label for="reportType">Tipo de Reporte</label>
                     <select id="reportType" required>
@@ -63,19 +91,26 @@
                         <option value="Zonas Verdes">Mantenimiento de zonas verdes</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="location">Ubicación</label>
                     <input type="text" id="location" placeholder="Dirección exacta o puntos de referencia" required>
                 </div>
+
                 <div class="form-group">
                     <label for="description">Descripción del problema</label>
                     <textarea id="description" rows="4" placeholder="Detalle lo que sucede..." required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Reporte</button>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Enviar Reporte
+                </button>
             </form>
         </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../js/reporte.js"></script>
+
 </body>
 </html>
