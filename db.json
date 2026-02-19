@@ -6,7 +6,8 @@
       "correo": "1@gmail.com",
       "contrasena": "1234",
       "telefono": "123456",
-      "rol": "ciudadano"
+      "rol": "ciudadano",
+      "estado": "inactivo"
     },
     {
       "id": "5ead",
@@ -14,7 +15,8 @@
       "correo": "1@gmail.com",
       "contrasena": "1234567",
       "telefono": "123456",
-      "rol": "ciudadano"
+      "rol": "ciudadano",
+      "estado": "inactivo"
     },
     {
       "id": "88f4",
@@ -22,7 +24,8 @@
       "correo": "4@gmail.com",
       "contrasena": "35edrfgvbhkljihg yfaydbuisuid,f",
       "telefono": "12345678909876543",
-      "rol": "ciudadano"
+      "rol": "ciudadano",
+      "estado": "inactivo"
     },
     {
       "id": "bfef",
@@ -30,7 +33,8 @@
       "correo": "ssalazarfwdcostarica@gmail.com",
       "contrasena": "123456",
       "telefono": "62211837",
-      "rol": "ciudadano"
+      "rol": "ciudadano",
+      "estado": "inactivo"
     },
     {
       "id": "b877",
@@ -38,7 +42,8 @@
       "correo": "ssalazarfwdcostarica@gmail.com",
       "contrasena": "00000000000000000000000000000000000000",
       "telefono": "12345678",
-      "rol": "ciudadano"
+      "rol": "ciudadano",
+      "estado": "inactivo"
     },
     {
       "id": "a589",
@@ -46,23 +51,8 @@
       "correo": "ssalazarfwdcostarica@gmail.com",
       "contrasena": "000000000000000000000000000000000000000",
       "telefono": "7269 4020",
-      "rol": "ciudadano"
-    },
-    {
-      "id": "09e9",
-      "nombre": "papaya con alejandro",
-      "correo": "alejandrolimon2@gmail.com",
-      "contrasena": "123456789",
-      "telefono": "123445678",
-      "rol": "ciudadano"
-    },
-    {
-      "id": "e08b",
-      "nombre": "jheycob porras",
-      "correo": "jporrasfwdcostarica@gmail.com",
-      "contrasena": "123456789",
-      "telefono": "12121231",
-      "rol": "ciudadano"
+      "rol": "ciudadano",
+      "estado": "inactivo"
     }
   ],
   "reportes": [

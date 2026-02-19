@@ -22,7 +22,8 @@ btnRegister.addEventListener('click', async (e) => {
         correo,
         contrasena,
         telefono,
-        rol: 'ciudadano' // Por defecto
+        rol: 'ciudadano', // Por defecto
+        estado: 'activo' // Por defecto
     };
 
     try {
