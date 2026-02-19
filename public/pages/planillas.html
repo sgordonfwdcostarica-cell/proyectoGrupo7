@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Planillas - Municipalidad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container animate-fade">
+        <header>
+            <h1>Sistema de Planillas</h1>
+            <p>Municipalidad - Gestión de pagos y empleados</p>
+        </header>
+
+        <main class="grid">
+            <!-- Sidebar: Formulario -->
+            <section class="glass-card">
+                <h2 style="margin-bottom: 1.5rem;" id="form-title">Registrar Empleado</h2>
+                <form id="payroll-form">
+                    <input type="hidden" id="edit-id">
+                    
+                    <div class="form-group">
+                        <label for="employee-name">Nombre del Empleado</label>
+                        <input type="text" id="employee-name" placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Puesto</label>
+                        <input type="text" id="position" placeholder="Ej. Analista Senior" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Departamento</label>
+                        <select id="department" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Finanzas">Finanzas</option>
+                            <option value="Servicios Generales">Servicios Generales</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Alcaldía">Alcaldía</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="base-salary">Salario Base (₡)</label>
+                        <input type="number" id="base-salary" min="0" step="0.01" value="0.00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="extra-hours">Horas Extra (₡)</label>
+                        <input type="number" id="extra-hours" min="0" step="0.01" value="0.00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deductions">Rebajos/Deducciones (₡)</label>
+                        <input type="number" id="deductions" min="0" step="0.01" value="0.00" required>
+                    </div>
+
+                    <div class="form-group" style="background: rgba(37, 99, 235, 0.05); padding: 1rem; border-radius: 0.5rem; border: 1px dashed var(--primary-color);">
+                        <label style="color: var(--primary-color); margin-bottom: 0;">Salario Neto Estimado</label>
+                        <div id="net-salary-preview" class="badge-salary" style="font-size: 1.25rem;">₡0.00</div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-primary" id="btn-submit">Guardar Registro</button>
+                        <button type="button" class="btn btn-danger" id="btn-cancel" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Contenido Principal: Tabla -->
+            <section class="glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h2>Registros de Planilla</h2>
+                    <div id="payroll-stats" class="text-muted" style="font-size: 0.875rem;">
+                        Total: <span id="total-employees">0</span> empleados
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="payroll-table">
+                        <thead>
+                            <tr>
+                                <th>Empleado / Puesto</th>
+                                <th>Depto.</th>
+                                <th>Salario Base</th>
+                                <th>Neto</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="payroll-body">
+                            <!-- Filas dinámicas -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="empty-state" style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                    Sin registros. Complete el formulario para empezar.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
